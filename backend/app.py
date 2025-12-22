@@ -95,9 +95,7 @@ def run_diagnosis(nama_pasien, gejala_list, kondisi_list, details=None):
         
     return result
 
-# ================= 5. API ROUTES =================
-
-# --- Endpoint 1: Ambil List Checkbox Dinamis ---
+# --- Endpoint 1: Ambil List Checkbox Dinamis (PERBAIKAN DESCENDANTS) ---
 @app.route('/api/master-data', methods=['GET'])
 def get_master_data():
     data = {
@@ -106,23 +104,35 @@ def get_master_data():
     }
     
     with onto:
-        # A. Ambil Data Gejala
+        # =========================================
+        # 1. AMBIL GEJALA (Pakai descendants)
+        # =========================================
         cls_gejala = getattr(base, "Gejala", None)
         if cls_gejala:
-            for cls in cls_gejala.subclasses():
-                if isinstance(cls, ThingClass): 
-                    data["gejala"].append({
-                        "value": cls.name,              
-                        "label": format_label(cls.name) 
-                    })
+            # GANTI .subclasses() JADI .descendants()
+            for cls in cls_gejala.descendants():
+                
+                # Filter 1: Pastikan ini Class beneran & bukan class Gejala itu sendiri
+                if isinstance(cls, ThingClass) and cls != cls_gejala:
+                    
+                    # Filter 2 (Opsional tapi Bagus): LEAF NODE STRATEGY
+                    # Artinya: Kalau class ini punya anak lagi (misal 'Nyeri' punya anak 'NyeriSpontan'),
+                    # maka 'Nyeri' (induknya) JANGAN ditampilkan. Tampilkan anaknya saja.
+                    # Hapus 'if' di bawah ini kalau mau nampilin induknya juga.
+                    if not list(cls.subclasses()):
+                        data["gejala"].append({
+                            "value": cls.name,              
+                            "label": format_label(cls.name) 
+                        })
         
-        # B. Ambil Data Kondisi (KondisiMulut dan turunannya)
+        # =========================================
+        # 2. AMBIL KONDISI (Sama, pakai descendants)
+        # =========================================
         cls_kondisi_root = getattr(base, "KondisiMulut", None)
         if cls_kondisi_root:
             for cls in cls_kondisi_root.descendants():
-                # Filter: Hanya ambil class yang tidak punya anak (leaf node)
-                # agar class abstrak seperti 'KondisiGigi' tidak muncul
                 if isinstance(cls, ThingClass) and cls != cls_kondisi_root:
+                    # Filter Leaf Node juga
                     if not list(cls.subclasses()):
                         data["kondisi"].append({
                             "value": cls.name,

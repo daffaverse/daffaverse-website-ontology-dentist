@@ -7,9 +7,28 @@ use Illuminate\Support\Facades\Http;
 
 class DiagnosaController extends Controller
 {
-    public function index()
+ public function index()
     {
-        return view('welcome');
+        // Default data kosong (jaga-jaga kalau python mati)
+        $masterData = [
+            'gejala' => [],
+            'kondisi' => []
+        ];
+
+        try {
+            // Tembak API Python untuk minta list checkbox
+            $response = Http::get('http://127.0.0.1:5000/api/master-data');
+            
+            if ($response->successful()) {
+                $masterData = $response->json()['data'];
+            }
+        } catch (\Exception $e) {
+            // Kalau python mati, biarkan kosong atau handle error
+            // Log::error($e->getMessage());
+        }
+
+        // Kirim data ke View Welcome
+        return view('welcome', compact('masterData'));
     }
 
     public function submit(Request $request)

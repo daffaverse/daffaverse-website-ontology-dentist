@@ -1,19 +1,23 @@
 from flask import Flask, request, jsonify
 from owlready2 import *
 import sys
-import uuid  # <--- 1. WAJIB TAMBAHKAN INI
+import uuid
+import re  # <--- Wajib ada untuk merapikan teks
 
 # ================= CONFIGURATION =================
+# 1. Inisialisasi 'app' harus di ATAS sebelum dipakai di @app.route
 app = Flask(__name__)
+
 ONTOLOGY_FILE = "project_sw.owl"
 BASE_IRI = "http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/"
 
-# ================= 1. LOAD ONTOLOGY =================
+# ================= 2. LOAD ONTOLOGY =================
 print(f"[INIT] Memuat ontologi {ONTOLOGY_FILE}...")
 try:
     onto = get_ontology(ONTOLOGY_FILE).load()
     base = onto.get_namespace(BASE_IRI)
     
+    # Pre-load Pellet Reasoner
     with onto:
         sync_reasoner_pellet(infer_property_values=True)
     
@@ -22,7 +26,14 @@ except Exception as e:
     print(f"[FATAL] Gagal memuat ontologi: {e}")
     sys.exit(1)
 
-# ================= 2. CORE LOGIC =================
+# ================= 3. HELPER FUNCTIONS =================
+
+def format_label(name):
+    """Mengubah CamelCase menjadi Spasi (Misal: GusiBerdarah -> Gusi Berdarah)"""
+    s1 = re.sub('(.)([A-Z][a-z]+)', r'\1 \2', name)
+    return re.sub('([a-z0-9])([A-Z])', r'\1 \2', s1)
+
+# ================= 4. CORE LOGIC (DIAGNOSA) =================
 def run_diagnosis(nama_pasien, gejala_list, kondisi_list, details=None):
     result = {
         "penyakit": [],
@@ -31,22 +42,19 @@ def run_diagnosis(nama_pasien, gejala_list, kondisi_list, details=None):
     }
     
     with onto:
-        # --- PERBAIKAN BUG ---
-        # Generate ID Acak agar ontologi menganggap ini pasien yang benar-benar baru
-        # Walaupun input namanya sama ("Budi"), di ontologi akan jadi "Pasien_Budi_a1b2c3"
+        # Generate ID Acak
         unique_id = uuid.uuid4().hex[:8] 
         pasien_iri = f"Pasien_{nama_pasien.replace(' ', '_')}_{unique_id}"
         
         pasien = base.Pasien(pasien_iri)
-        # ---------------------
         
-        # B. Masukkan Gejala
+        # Mapping Gejala
         for g_str in gejala_list:
             cls_gejala = getattr(base, g_str, None)
             if cls_gejala:
-                # Tambahkan unique ID juga ke gejala biar tidak bentrok
                 inst_gejala = cls_gejala(f"Gejala_{g_str}_{unique_id}")
                 
+                # Cek Detail (Durasi/Pemicu)
                 if details and g_str in details:
                     if 'durasi' in details[g_str]:
                         try:
@@ -59,26 +67,22 @@ def run_diagnosis(nama_pasien, gejala_list, kondisi_list, details=None):
                         pemicu_name = details[g_str]['pemicu']
                         pemicu_cls = getattr(base, pemicu_name, None)
                         if pemicu_cls:
-                            # Tambahkan unique ID ke pemicu
                             inst_pemicu = pemicu_cls(f"Pemicu_{pemicu_name}_{unique_id}")
                             inst_gejala.dipicuOleh.append(inst_pemicu)
                 
                 pasien.mengalamiGejala.append(inst_gejala)
         
-        # C. Masukkan Kondisi
+        # Mapping Kondisi
         for k_str in kondisi_list:
             cls_kondisi = getattr(base, k_str, None)
             if cls_kondisi:
-                # Tambahkan unique ID ke kondisi
                 inst_kondisi = cls_kondisi(f"Kondisi_{k_str}_{unique_id}")
                 pasien.mengalamiKondisi.append(inst_kondisi)
 
-        # D. Jalankan Reasoner
+        # Jalankan Reasoner
         try:
-            # infer_property_values=True penting
             sync_reasoner_pellet(infer_property_values=True, infer_data_property_values=True)
             
-            # Ambil Hasil
             result["penyakit"] = [d.name for d in pasien.didugaMenderita]
             result["spesialis"] = [s.name for s in pasien.dirujukKe]
             
@@ -86,16 +90,48 @@ def run_diagnosis(nama_pasien, gejala_list, kondisi_list, details=None):
             result["pesan_error"] = str(e)
             print(f"[ERROR REASONING] {e}")
             
-        # E. Cleanup (PENTING: Hancurkan entitas unik ini setelah selesai)
-        # Ini mencegah memori membengkak karena setiap klik nambah entity baru
+        # Cleanup
         destroy_entity(pasien)
-        
-        # Opsional: Hancurkan juga gejala/kondisi yang tadi dibuat (Advanced Cleanup)
-        # Tapi destroy pasien biasanya sudah cukup memutus relasi utama
         
     return result
 
-# ================= 3. API ROUTE =================
+# ================= 5. API ROUTES =================
+
+# --- Endpoint 1: Ambil List Checkbox Dinamis ---
+@app.route('/api/master-data', methods=['GET'])
+def get_master_data():
+    data = {
+        "gejala": [],
+        "kondisi": []
+    }
+    
+    with onto:
+        # A. Ambil Data Gejala
+        cls_gejala = getattr(base, "Gejala", None)
+        if cls_gejala:
+            for cls in cls_gejala.subclasses():
+                if isinstance(cls, ThingClass): 
+                    data["gejala"].append({
+                        "value": cls.name,              
+                        "label": format_label(cls.name) 
+                    })
+        
+        # B. Ambil Data Kondisi (KondisiMulut dan turunannya)
+        cls_kondisi_root = getattr(base, "KondisiMulut", None)
+        if cls_kondisi_root:
+            for cls in cls_kondisi_root.descendants():
+                # Filter: Hanya ambil class yang tidak punya anak (leaf node)
+                # agar class abstrak seperti 'KondisiGigi' tidak muncul
+                if isinstance(cls, ThingClass) and cls != cls_kondisi_root:
+                    if not list(cls.subclasses()):
+                        data["kondisi"].append({
+                            "value": cls.name,
+                            "label": format_label(cls.name)
+                        })
+
+    return jsonify({"status": "success", "data": data})
+
+# --- Endpoint 2: Proses Diagnosa ---
 @app.route('/api/diagnosa', methods=['POST'])
 def api_diagnosa():
     data = request.json
@@ -111,4 +147,5 @@ def api_diagnosa():
     return jsonify({"status": "success", "data": output})
 
 if __name__ == '__main__':
+    # Jalankan server
     app.run(host='0.0.0.0', port=5000, debug=True)

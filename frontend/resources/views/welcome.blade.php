@@ -81,77 +81,18 @@
                 </div>
                 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <label class="relative flex items-start p-4 rounded-xl cursor-pointer border border-gray-100 hover:border-medical-200 hover:bg-gray-50 transition-all duration-200">
-                        <div class="flex items-center h-5">
-                            <input type="checkbox" name="gejala[]" value="Ngilu" class="w-4 h-4 text-medical-600 border-gray-300 rounded focus:ring-medical-500">
-                        </div>
-                        <div class="ml-3 text-sm">
-                            <span class="font-medium text-gray-900">Gigi terasa ngilu</span>
-                        </div>
-                    </label>
-
-                    <label class="relative flex items-start p-4 rounded-xl cursor-pointer border border-gray-100 hover:border-medical-200 hover:bg-gray-50 transition-all duration-200">
-                        <div class="flex items-center h-5">
-                            <input type="checkbox" name="gejala[]" value="NyeriMalamHari" class="w-4 h-4 text-medical-600 border-gray-300 rounded focus:ring-medical-500">
-                        </div>
-                        <div class="ml-3 text-sm">
-                            <span class="font-medium text-gray-900">Nyeri tajam saat malam hari</span>
-                        </div>
-                    </label>
-
-                    <label class="relative flex items-start p-4 rounded-xl cursor-pointer border border-gray-100 hover:border-medical-200 hover:bg-gray-50 transition-all duration-200">
-                        <div class="flex items-center h-5">
-                            <input type="checkbox" name="gejala[]" value="NyeriSaatMenggigit" class="w-4 h-4 text-medical-600 border-gray-300 rounded focus:ring-medical-500">
-                        </div>
-                        <div class="ml-3 text-sm">
-                            <span class="font-medium text-gray-900">Nyeri tajam saat menggigit</span>
-                        </div>
-                    </label>
-                    
-                    <label class="relative flex items-start p-4 rounded-xl cursor-pointer border border-gray-100 hover:border-medical-200 hover:bg-gray-50 transition-all duration-200">
-                        <div class="flex items-center h-5">
-                            <input type="checkbox" name="gejala[]" value="NyeriSpontan" class="w-4 h-4 text-medical-600 border-gray-300 rounded focus:ring-medical-500">
-                        </div>
-                        <div class="ml-3 text-sm">
-                            <span class="font-medium text-gray-900">Nyeri Spontan (Tiba-tiba)</span>
-                        </div>
-                    </label>
-
-                    <label class="relative flex items-start p-4 rounded-xl cursor-pointer border border-gray-100 hover:border-medical-200 hover:bg-gray-50 transition-all duration-200">
-                        <div class="flex items-center h-5">
-                            <input type="checkbox" name="gejala[]" value="Trismus" class="w-4 h-4 text-medical-600 border-gray-300 rounded focus:ring-medical-500">
-                        </div>
-                        <div class="ml-3 text-sm">
-                            <span class="font-medium text-gray-900">Susah membuka mulut (Kaku)</span>
-                        </div>
-                    </label>
-
-                    <label class="relative flex items-start p-4 rounded-xl cursor-pointer border border-gray-100 hover:border-medical-200 hover:bg-gray-50 transition-all duration-200">
-                        <div class="flex items-center h-5">
-                            <input type="checkbox" name="gejala[]" value="GusiBerdarah" class="w-4 h-4 text-medical-600 border-gray-300 rounded focus:ring-medical-500">
-                        </div>
-                        <div class="ml-3 text-sm">
-                            <span class="font-medium text-gray-900">Gusi mudah berdarah</span>
-                        </div>
-                    </label>
-
-                    <label class="relative flex items-start p-4 rounded-xl cursor-pointer border border-gray-100 hover:border-medical-200 hover:bg-gray-50 transition-all duration-200">
-                        <div class="flex items-center h-5">
-                            <input type="checkbox" name="gejala[]" value="BengkakWajah" class="w-4 h-4 text-medical-600 border-gray-300 rounded focus:ring-medical-500">
-                        </div>
-                        <div class="ml-3 text-sm">
-                            <span class="font-medium text-gray-900">Wajah terlihat bengkak</span>
-                        </div>
-                    </label>
-                    
-                    <label class="relative flex items-start p-4 rounded-xl cursor-pointer border border-gray-100 hover:border-medical-200 hover:bg-gray-50 transition-all duration-200">
-                        <div class="flex items-center h-5">
-                            <input type="checkbox" name="gejala[]" value="ResponGigiNegatif" class="w-4 h-4 text-medical-600 border-gray-300 rounded focus:ring-medical-500">
-                        </div>
-                        <div class="ml-3 text-sm">
-                            <span class="font-medium text-gray-900">Gigi Mati Rasa (Tes Vitalitas Negatif)</span>
-                        </div>
-                    </label>
+                    @forelse($masterData['gejala'] as $gejala)
+                        <label class="relative flex items-start p-4 rounded-xl cursor-pointer border border-gray-100 hover:border-medical-200 hover:bg-gray-50 transition-all duration-200">
+                            <div class="flex items-center h-5">
+                                <input type="checkbox" name="gejala[]" value="{{ $gejala['value'] }}" class="w-4 h-4 text-medical-600 border-gray-300 rounded focus:ring-medical-500">
+                            </div>
+                            <div class="ml-3 text-sm">
+                                <span class="font-medium text-gray-900">{{ $gejala['label'] }}</span>
+                            </div>
+                        </label>
+                    @empty
+                        <p class="text-red-500 text-sm">Gagal memuat data gejala. Pastikan server Python nyala.</p>
+                    @endforelse
                 </div>
             </div>
 
@@ -172,52 +113,20 @@
                 </div>
 
                 <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">Kondisi Fisik (Apa yang terlihat?)</h3>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
-                    <label class="relative flex items-start p-4 rounded-xl cursor-pointer border border-gray-100 hover:border-medical-200 hover:bg-gray-50 transition-all duration-200">
-                        <div class="flex items-center h-5">
-                            <input type="checkbox" name="kondisi[]" value="BauMulut" class="w-4 h-4 text-medical-600 border-gray-300 rounded focus:ring-medical-500">
-                        </div>
-                        <div class="ml-3 text-sm">
-                            <span class="font-medium text-gray-900">Bau mulut menyengat</span>
-                        </div>
-                    </label>
-
-                    <label class="relative flex items-start p-4 rounded-xl cursor-pointer border border-gray-100 hover:border-medical-200 hover:bg-gray-50 transition-all duration-200">
-                        <div class="flex items-center h-5">
-                            <input type="checkbox" name="kondisi[]" value="GigiGoyang" class="w-4 h-4 text-medical-600 border-gray-300 rounded focus:ring-medical-500">
-                        </div>
-                        <div class="ml-3 text-sm">
-                            <span class="font-medium text-gray-900">Gigi terasa goyang</span>
-                        </div>
-                    </label>
-
-                    <label class="relative flex items-start p-4 rounded-xl cursor-pointer border border-gray-100 hover:border-medical-200 hover:bg-gray-50 transition-all duration-200">
-                        <div class="flex items-center h-5">
-                            <input type="checkbox" name="kondisi[]" value="GigiErupsiSebagian" class="w-4 h-4 text-medical-600 border-gray-300 rounded focus:ring-medical-500">
-                        </div>
-                        <div class="ml-3 text-sm">
-                            <span class="font-medium text-gray-900">Gigi tumbuh miring / sebagian</span>
-                        </div>
-                    </label>
-
-                    <label class="relative flex items-start p-4 rounded-xl cursor-pointer border border-gray-100 hover:border-medical-200 hover:bg-gray-50 transition-all duration-200">
-                        <div class="flex items-center h-5">
-                            <input type="checkbox" name="kondisi[]" value="GusiBenjol" class="w-4 h-4 text-medical-600 border-gray-300 rounded focus:ring-medical-500">
-                        </div>
-                        <div class="ml-3 text-sm">
-                            <span class="font-medium text-gray-900">Ada benjolan pada gusi</span>
-                        </div>
-                    </label>
-                    
-                    <label class="relative flex items-start p-4 rounded-xl cursor-pointer border border-gray-100 hover:border-medical-200 hover:bg-gray-50 transition-all duration-200">
-                        <div class="flex items-center h-5">
-                            <input type="checkbox" name="kondisi[]" value="OperkulumBengkak" class="w-4 h-4 text-medical-600 border-gray-300 rounded focus:ring-medical-500">
-                        </div>
-                        <div class="ml-3 text-sm">
-                            <span class="font-medium text-gray-900">Gusi bengkak di atas gigi geraham (Operkulum)</span>
-                        </div>
-                    </label>
-                </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+                        @forelse($masterData['kondisi'] as $kondisi)
+                            <label class="relative flex items-start p-4 rounded-xl cursor-pointer border border-gray-100 hover:border-medical-200 hover:bg-gray-50 transition-all duration-200">
+                                <div class="flex items-center h-5">
+                                    <input type="checkbox" name="kondisi[]" value="{{ $kondisi['value'] }}" class="w-4 h-4 text-medical-600 border-gray-300 rounded focus:ring-medical-500">
+                                </div>
+                                <div class="ml-3 text-sm">
+                                    <span class="font-medium text-gray-900">{{ $kondisi['label'] }}</span>
+                                </div>
+                            </label>
+                        @empty
+                            <p class="text-gray-400 text-sm">Tidak ada data kondisi.</p>
+                        @endforelse
+                    </div>
 
                 <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">Pemicu Utama (Kapan sakit muncul?)</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">

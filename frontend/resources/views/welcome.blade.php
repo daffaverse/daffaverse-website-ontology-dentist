@@ -31,6 +31,8 @@
             }
         }
     </script>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased">
 
@@ -74,25 +76,45 @@
             </div>
 
             <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 transition-all hover:shadow-md">
-                <div class="flex items-center gap-3 mb-6 border-b border-gray-100 pb-4">
-                    <span class="flex items-center justify-center w-8 h-8 rounded-full bg-medical-100 text-medical-700 font-bold text-sm">2</span>
-                    <h2 class="text-lg font-semibold text-gray-900">Gejala yang dirasakan</h2>
-                    <span class="text-xs text-gray-400 ml-auto">(Boleh pilih lebih dari satu)</span>
-                </div>
-                
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    @forelse($masterData['gejala'] as $gejala)
-                        <label class="relative flex items-start p-4 rounded-xl cursor-pointer border border-gray-100 hover:border-medical-200 hover:bg-gray-50 transition-all duration-200">
-                            <div class="flex items-center h-5">
-                                <input type="checkbox" name="gejala[]" value="{{ $gejala['value'] }}" class="w-4 h-4 text-medical-600 border-gray-300 rounded focus:ring-medical-500">
+                <div x-data="{ 
+                    search: '', 
+                    expandNyeri: false,
+                    isNyeri(text) { return text.toLowerCase().includes('nyeri') || text.toLowerCase().includes('ngilu'); }
+                }" class="space-y-4">
+
+                    <div class="relative">
+                        <input type="text" x-model="search" placeholder="Cari keluhan... (misal: bengkak, darah)" 
+                            class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-medical-500 outline-none">
+                        <div class="absolute left-3 top-2.5 text-gray-400">🔍</div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        @forelse($masterData['gejala'] as $gejala)
+                            <div x-show="
+                                    (search !== '' && $el.textContent.toLowerCase().includes(search.toLowerCase())) || 
+                                    (search === '' && (!isNyeri('{{ $gejala['value'] }}') || expandNyeri))
+                                "
+                                x-transition
+                                class="relative flex items-start p-4 rounded-xl cursor-pointer border border-gray-100 hover:border-medical-200 hover:bg-gray-50">
+                                
+                                <div class="flex items-center h-5">
+                                    <input type="checkbox" name="gejala[]" value="{{ $gejala['value'] }}" class="w-4 h-4 text-medical-600 border-gray-300 rounded focus:ring-medical-500">
+                                </div>
+                                <div class="ml-3 text-sm">
+                                    <span class="font-medium text-gray-900">{{ $gejala['label'] }}</span>
+                                </div>
                             </div>
-                            <div class="ml-3 text-sm">
-                                <span class="font-medium text-gray-900">{{ $gejala['label'] }}</span>
-                            </div>
-                        </label>
-                    @empty
-                        <p class="text-red-500 text-sm">Gagal memuat data gejala. Pastikan server Python nyala.</p>
-                    @endforelse
+                        @empty
+                            <p>Data gejala tidak termuat.</p>
+                        @endforelse
+                    </div>
+
+                    <div x-show="search === ''" class="text-center pt-2">
+                        <button type="button" @click="expandNyeri = !expandNyeri" 
+                            class="text-sm font-semibold text-white bg-medical-500 hover:bg-medical-600 px-6 py-2 rounded-full shadow-md transition-all">
+                            <span x-text="expandNyeri ? 'Tutup Opsi Nyeri' : 'Saya Merasakan Nyeri Spesifik (Klik Disini)'"></span>
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -112,7 +134,16 @@
                     <p class="text-xs text-gray-500 mt-2 italic">*kosongkan jika tidak ada nyeri yang dipicu.</p>
                 </div>
 
-                <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">Kondisi Fisik (Apa yang terlihat?)</h3>
+                <div>
+                     <div class="p-4 bg-yellow-50 rounded-xl border border-yellow-100">
+                        <label class="block text-sm font-semibold text-yellow-900 mb-2">Lama Keluhan (Hari)</label>
+                        <p class="text-xs text-yellow-600 mb-2">Sudah berapa hari Anda merasakan gangguan ini?</p>
+                        <input type="number" name="details[lama_hari]" placeholder="Contoh: 3" class="w-full px-3 py-2 rounded-lg border border-yellow-200">
+                        <p class="text-xs text-gray-500 mt-2 italic">*kosongkan jika tidak ada keluhan yang dirasakan.</p>
+                    </div>
+                </div>
+
+                <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mt-10 mb-3">Kondisi Fisik (Apa yang terlihat?)</h3>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
                         @forelse($masterData['kondisi'] as $kondisi)
                             <label class="relative flex items-start p-4 rounded-xl cursor-pointer border border-gray-100 hover:border-medical-200 hover:bg-gray-50 transition-all duration-200">

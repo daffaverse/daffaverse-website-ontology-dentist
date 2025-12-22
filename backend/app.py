@@ -2,10 +2,9 @@ from flask import Flask, request, jsonify
 from owlready2 import *
 import sys
 import uuid
-import re  # <--- Wajib ada untuk merapikan teks
+import re
 
 # ================= CONFIGURATION =================
-# 1. Inisialisasi 'app' harus di ATAS sebelum dipakai di @app.route
 app = Flask(__name__)
 
 ONTOLOGY_FILE = "project_sw.owl"
@@ -17,7 +16,6 @@ try:
     onto = get_ontology(ONTOLOGY_FILE).load()
     base = onto.get_namespace(BASE_IRI)
     
-    # Pre-load Pellet Reasoner
     with onto:
         sync_reasoner_pellet(infer_property_values=True)
     
@@ -29,32 +27,52 @@ except Exception as e:
 # ================= 3. HELPER FUNCTIONS =================
 
 def format_label(name):
-    """Mengubah CamelCase menjadi Spasi (Misal: GusiBerdarah -> Gusi Berdarah)"""
+    """Mengubah CamelCase menjadi Spasi"""
     s1 = re.sub('(.)([A-Z][a-z]+)', r'\1 \2', name)
     return re.sub('([a-z0-9])([A-Z])', r'\1 \2', s1)
+
+def get_annotation_value(entity, annotation_property):
+    """Helper aman untuk mengambil value annotation (comment/seeAlso)"""
+    if hasattr(entity, annotation_property):
+        vals = getattr(entity, annotation_property)
+        if vals and len(vals) > 0:
+            return str(vals[0]) # Ambil yang pertama
+    return None
 
 # ================= 4. CORE LOGIC (DIAGNOSA) =================
 def run_diagnosis(nama_pasien, gejala_list, kondisi_list, details=None):
     result = {
-        "penyakit": [],
+        "penyakit": [], # Akan berisi List of Dictionary (Object)
         "spesialis": [],
         "pesan_error": None
     }
     
     with onto:
-        # Generate ID Acak
         unique_id = uuid.uuid4().hex[:8] 
         pasien_iri = f"Pasien_{nama_pasien.replace(' ', '_')}_{unique_id}"
         
         pasien = base.Pasien(pasien_iri)
         
+        # --- LOGIC TAMBAHAN: DATA PROPERTY (Lama Hari) ---
+        if details and 'lama_hari' in details:
+            try:
+                hari_val = int(details['lama_hari'])
+                # Cek apakah property 'lamaHari' sudah dibuat teman Anda di ontology?
+                # Kita pakai getattr agar code tidak crash jika property belum ada.
+                if hasattr(pasien, 'lamaHari'): 
+                    pasien.lamaHari = [hari_val]
+                else:
+                    print("[WARN] Data Property 'lamaHari' belum didefinisikan di file OWL.")
+            except ValueError:
+                pass # Abaikan jika input bukan angka
+
         # Mapping Gejala
         for g_str in gejala_list:
             cls_gejala = getattr(base, g_str, None)
             if cls_gejala:
                 inst_gejala = cls_gejala(f"Gejala_{g_str}_{unique_id}")
                 
-                # Cek Detail (Durasi/Pemicu)
+                # Cek Detail Gejala (Durasi/Pemicu) untuk gejala spesifik
                 if details and g_str in details:
                     if 'durasi' in details[g_str]:
                         try:
@@ -83,8 +101,18 @@ def run_diagnosis(nama_pasien, gejala_list, kondisi_list, details=None):
         try:
             sync_reasoner_pellet(infer_property_values=True, infer_data_property_values=True)
             
-            result["penyakit"] = [d.name for d in pasien.didugaMenderita]
-            result["spesialis"] = [s.name for s in pasien.dirujukKe]
+            # --- LOGIC BARU: MENGAMBIL DESKRIPSI (COMMENT) & LINK (SEEALSO) ---
+            for d in pasien.didugaMenderita:
+                penyakit_obj = {
+                    "kode": d.name,
+                    "nama": format_label(d.name.replace('Penyakit_', '')),
+                    "deskripsi": get_annotation_value(d, "comment"), # rdf:comment
+                    "link": get_annotation_value(d, "seeAlso")       # rdf:seeAlso
+                }
+                result["penyakit"].append(penyakit_obj)
+            
+            # Untuk spesialis kita ambil namanya saja
+            result["spesialis"] = [format_label(s.name) for s in pasien.dirujukKe]
             
         except Exception as e:
             result["pesan_error"] = str(e)
@@ -95,44 +123,26 @@ def run_diagnosis(nama_pasien, gejala_list, kondisi_list, details=None):
         
     return result
 
-# --- Endpoint 1: Ambil List Checkbox Dinamis (PERBAIKAN DESCENDANTS) ---
+# --- Endpoint 1: Master Data ---
 @app.route('/api/master-data', methods=['GET'])
 def get_master_data():
-    data = {
-        "gejala": [],
-        "kondisi": []
-    }
+    data = { "gejala": [], "kondisi": [] }
     
     with onto:
-        # =========================================
-        # 1. AMBIL GEJALA (Pakai descendants)
-        # =========================================
         cls_gejala = getattr(base, "Gejala", None)
         if cls_gejala:
-            # GANTI .subclasses() JADI .descendants()
             for cls in cls_gejala.descendants():
-                
-                # Filter 1: Pastikan ini Class beneran & bukan class Gejala itu sendiri
                 if isinstance(cls, ThingClass) and cls != cls_gejala:
-                    
-                    # Filter 2 (Opsional tapi Bagus): LEAF NODE STRATEGY
-                    # Artinya: Kalau class ini punya anak lagi (misal 'Nyeri' punya anak 'NyeriSpontan'),
-                    # maka 'Nyeri' (induknya) JANGAN ditampilkan. Tampilkan anaknya saja.
-                    # Hapus 'if' di bawah ini kalau mau nampilin induknya juga.
                     if not list(cls.subclasses()):
                         data["gejala"].append({
                             "value": cls.name,              
                             "label": format_label(cls.name) 
                         })
         
-        # =========================================
-        # 2. AMBIL KONDISI (Sama, pakai descendants)
-        # =========================================
         cls_kondisi_root = getattr(base, "KondisiMulut", None)
         if cls_kondisi_root:
             for cls in cls_kondisi_root.descendants():
                 if isinstance(cls, ThingClass) and cls != cls_kondisi_root:
-                    # Filter Leaf Node juga
                     if not list(cls.subclasses()):
                         data["kondisi"].append({
                             "value": cls.name,
@@ -141,7 +151,7 @@ def get_master_data():
 
     return jsonify({"status": "success", "data": data})
 
-# --- Endpoint 2: Proses Diagnosa ---
+# --- Endpoint 2: Diagnosa ---
 @app.route('/api/diagnosa', methods=['POST'])
 def api_diagnosa():
     data = request.json
@@ -151,11 +161,9 @@ def api_diagnosa():
     details = data.get('details', {})
     
     print(f"\n[REQUEST] Pasien: {nama}")
-    
     output = run_diagnosis(nama, gejala, kondisi, details)
     
     return jsonify({"status": "success", "data": output})
 
 if __name__ == '__main__':
-    # Jalankan server
     app.run(host='0.0.0.0', port=5000, debug=True)

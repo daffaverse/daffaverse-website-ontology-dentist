@@ -41,14 +41,16 @@ class DiagnosaController extends Controller
         $pemicu = $request->input('pemicu');
 
         // 2. Susun Struktur 'details' untuk API Python
-        // API Python butuh struktur: details: { "Gejala_X": { "durasi": 10, "pemicu": "..." } }
-        $details = [];
+        // PERBAIKAN: Ambil dulu input 'details' dari form (isi lama_hari ada disini)
+        $details = $request->input('details', []); 
 
-        // Jika user mencentang 'Ngilu' atau 'Nyeri', kita masukkan data durasi & pemicu
-        // Cek apakah ada gejala yang berhubungan dengan nyeri di input
+        // Jika user mencentang 'Ngilu' atau 'Nyeri', kita tambahkan data durasi & pemicu ke $details
         foreach ($gejalaSelected as $g) {
             if (str_contains($g, 'Ngilu') || str_contains($g, 'Nyeri')) {
-                $details[$g] = [];
+                // Pastikan array key ada
+                if (!isset($details[$g])) {
+                    $details[$g] = [];
+                }
                 
                 if ($durasi) {
                     $details[$g]['durasi'] = (int)$durasi;
@@ -60,7 +62,6 @@ class DiagnosaController extends Controller
         }
 
         // 3. Kirim Request ke Python API
-        // Pastikan app.py sudah jalan (python app.py)
         try {
             $response = Http::post('http://127.0.0.1:5000/api/diagnosa', [
                 'nama' => $nama,

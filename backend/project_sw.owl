@@ -1,0 +1,2860 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/"
+     xml:base="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/berkaitanDengan -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/berkaitanDengan">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KondisiGigi"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KondisiGigi"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/berkembangMenjadi -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/berkembangMenjadi">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitGigi"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KondisiGigi"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitGigi"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitGigi"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/dialamiOleh -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/dialamiOleh">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/mengalamiGejala"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pasien"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/didugaMenderita -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/didugaMenderita">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pasien"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitGigi"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KondisiGigi"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitGigi"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/dipicuOleh -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/dipicuOleh">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KondisiGigi"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitGigi"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pemicu"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/dirujukKe -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/dirujukKe">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pasien"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/SpesialisGigi"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/membutuhkanSpesialis -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/membutuhkanSpesialis">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/menanganiPenyakit"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitGigi"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KondisiGigi"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitGigi"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/SpesialisGigi"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/memilikiGejala -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/memilikiGejala">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitGigi"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KondisiGigi"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitGigi"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/menanganiPenyakit -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/menanganiPenyakit">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/SpesialisGigi"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitGigi"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KondisiGigi"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitGigi"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/mengalamiGejala -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/mengalamiGejala">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pasien"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/mengalamiKondisi -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/mengalamiKondisi">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pasien"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KondisiGigi"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/menyebabkan -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/menyebabkan">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KondisiGigi"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitGigi"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KondisiGigi"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitGigi"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/tingkatUrgensi -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/tingkatUrgensi">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitGigi"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KondisiGigi"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitGigi"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/durasiNyeri -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/durasiNyeri">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Nyeri"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/AbsesPeriapikal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/AbsesPeriapikal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitPulpa"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/AbsesPeriapikalAkut -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/AbsesPeriapikalAkut">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/AbsesPeriapikal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/AbsesPeriodontal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/AbsesPeriodontal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitPeriodontal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/BauMulut -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/BauMulut">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KondisiGigi"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/BengkakWajah -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/BengkakWajah">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Discoloration -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Discoloration">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/GigiGelap"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/GigiBerwarna"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/DokterGigiUmum -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/DokterGigiUmum">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/SpesialisGigi"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/FistulaGusi -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/FistulaGusi">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KondisiGusi"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitGigi"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/GigiBerlubang -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/GigiBerlubang">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KondisiGigi"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/GigiBerwarna -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/GigiBerwarna">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KondisiGigi"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/GigiErupsi -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/GigiErupsi">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KondisiGigi"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/GigiErupsiSebagian -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/GigiErupsiSebagian">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/GigiErupsi"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/GigiErupsiSempurna -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/GigiErupsiSempurna">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/GigiErupsi"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/GigiGelap -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/GigiGelap">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/GigiBerwarna"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/GigiGoyang -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/GigiGoyang">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/TandaKerusakanJaringan"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/GigiKekuningan -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/GigiKekuningan">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/GigiBerwarna"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gingivitis -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gingivitis">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitPeriodontal"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/berkembangMenjadi"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Periodontitis"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MESH/D005891"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/GusiBenjol -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/GusiBenjol">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KondisiGusi"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/GusiBerdarah -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/GusiBerdarah">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KondisiGusi"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/GusiTurun -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/GusiTurun">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/TandaKerusakanJaringan"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/HipersensitivitasDentin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/HipersensitivitasDentin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitGigi"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KondisiGigi"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitGigi"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MESH/D003807"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/ImpaksiMolar -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/ImpaksiMolar">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KelainanStruktural"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/InfeksiPascaCabut -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/InfeksiPascaCabut">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KelainanStruktural"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KantungGusiDalam -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KantungGusiDalam">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/TandaKerusakanJaringan"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KarangGigi -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KarangGigi">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KondisiGigi"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/menyebabkan"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gingivitis"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KariesGigi -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KariesGigi">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KondisiGigi"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KariesProfunda -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KariesProfunda">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KariesGigi"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KelainanStruktural -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KelainanStruktural">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/membutuhkanSpesialis"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Spesialis_Bedah_Mulut"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitGigi"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KondisiGigi -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KondisiGigi">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KondisiMulut"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KondisiGusi -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KondisiGusi">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KondisiMulut"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KondisiMulut -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KondisiMulut"/>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/LubangPascaCabut -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/LubangPascaCabut">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KondisiGigi"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/NekrosisPulpa -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/NekrosisPulpa">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitPulpa"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Ngilu -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Ngilu">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/dipicuOleh"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pemicu"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Nyeri -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Nyeri">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/NyeriHebat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/NyeriHebat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Nyeri"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/NyeriMalamHari -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/NyeriMalamHari">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Nyeri"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/NyeriMenelan -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/NyeriMenelan">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Nyeri"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/NyeriPalpasi -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/NyeriPalpasi">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Nyeri"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/NyeriPerkusi -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/NyeriPerkusi">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Nyeri"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/NyeriRahangBelakang -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/NyeriRahangBelakang">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Nyeri"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/NyeriSaatMenggigit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/NyeriSaatMenggigit">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Nyeri"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/NyeriSpontan -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/NyeriSpontan">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Nyeri"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/OperkulumBengkak -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/OperkulumBengkak">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KondisiGigi"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pasien -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pasien">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pasien_1"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pasien_Periodontitis"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pasien_Trauma_Oklusi"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pemicu -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pemicu">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitGigi"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitGigi -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitGigi">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KondisiGigi"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitGigi"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/memilikiGejala"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitPeriodontal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitPeriodontal">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/membutuhkanSpesialis"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Spesialis_Periodonsia"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitGigi"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitPulpa -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitPulpa">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/membutuhkanSpesialis"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Spesialis_Konservasi_Gigi"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitGigi"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PeriapikalKronis -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PeriapikalKronis">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KelainanStruktural"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Periodontitis -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Periodontitis">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitPeriodontal"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KondisiGigi"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitGigi"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MESH/D010518"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PlakGigi -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PlakGigi">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KondisiGigi"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/menyebabkan"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KarangGigi"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PosisiGigi -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PosisiGigi">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KondisiGigi"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PosisiHorizontal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PosisiHorizontal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PosisiGigi"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PosisiMiring -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PosisiMiring">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PosisiGigi"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PulpitisIrreversible -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PulpitisIrreversible">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitPulpa"/>
+        <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MESH/D011671"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PulpitisReversible -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PulpitisReversible">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitPulpa"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/berkembangMenjadi"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PulpitisIrreversible"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MESH/D011671"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/RadiksRelikta -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/RadiksRelikta">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KelainanStruktural"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/ResponGigiNegatif -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/ResponGigiNegatif">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/ResponGigiPositifKuat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/ResponGigiPositifKuat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/RiwayatCabutGigi -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/RiwayatCabutGigi">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KondisiGigi"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/SisaAkar -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/SisaAkar">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KondisiGigi"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/SpesialisBedahMulut -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/SpesialisBedahMulut">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/SpesialisGigi"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/SpesialisEndodentis -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/SpesialisEndodentis">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/SpesialisGigi"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/SpesialisGigi -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/SpesialisGigi"/>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/SpesialisPeriodonsia -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/SpesialisPeriodonsia">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/SpesialisGigi"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/StimulusDingin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/StimulusDingin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pemicu"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/StimulusPanas -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/StimulusPanas">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pemicu"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/TandaKerusakanJaringan -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/TandaKerusakanJaringan">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KondisiGigi"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/TekananSaatMenggigit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/TekananSaatMenggigit">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pemicu"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/TraumaOklusi -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/TraumaOklusi">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitGigi"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KondisiGigi"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitGigi"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MESH/D003766"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Trismus -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Trismus">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala_GusiBerdarah -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala_GusiBerdarah">
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/GusiBerdarah"/>
+        <dialamiOleh rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pasien_Periodontitis"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala_Ngilu -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala_Ngilu">
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Ngilu"/>
+        <dialamiOleh rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pasien_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala_NyeriMalamHari -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala_NyeriMalamHari">
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/NyeriMalamHari"/>
+        <dialamiOleh rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pasien_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala_NyeriSaatGigit -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala_NyeriSaatGigit">
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/NyeriSaatMenggigit"/>
+        <rdf:type>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KondisiGigi"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitGigi"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdf:type>
+        <dialamiOleh rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pasien_Trauma_Oklusi"/>
+        <dipicuOleh rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Tekanan"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala_Respon_Gigi_Negatif -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala_Respon_Gigi_Negatif">
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/ResponGigiNegatif"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala_Trismus -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala_Trismus">
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Trismus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Kondisi_BauMulut -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Kondisi_BauMulut">
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/BauMulut"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KondisiGigi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Kondisi_Fistula_Gusi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Kondisi_Fistula_Gusi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/FistulaGusi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Kondisi_GigiGoyang -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Kondisi_GigiGoyang">
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/GigiGoyang"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KondisiGigi"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/TandaKerusakanJaringan"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Kondisi_Gigi_Erupsi_Sebagian -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Kondisi_Gigi_Erupsi_Sebagian">
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/GigiErupsiSebagian"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Kondisi_Posisi_Gigi_Miring -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Kondisi_Posisi_Gigi_Miring">
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PosisiMiring"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pasien_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pasien_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pasien"/>
+        <didugaMenderita rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Pulpitis_Irreversible"/>
+        <mengalamiGejala rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala_Ngilu"/>
+        <mengalamiGejala rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala_NyeriMalamHari"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pasien_Impaksi_Molar -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pasien_Impaksi_Molar">
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pasien"/>
+        <mengalamiGejala rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala_Trismus"/>
+        <mengalamiKondisi rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Kondisi_Gigi_Erupsi_Sebagian"/>
+        <mengalamiKondisi rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Kondisi_Posisi_Gigi_Miring"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pasien_Periapikal_Kronis -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pasien_Periapikal_Kronis">
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pasien"/>
+        <mengalamiGejala rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala_Respon_Gigi_Negatif"/>
+        <mengalamiKondisi rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Kondisi_Fistula_Gusi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pasien_Periodontitis -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pasien_Periodontitis">
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pasien"/>
+        <didugaMenderita rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Periodontitis"/>
+        <mengalamiGejala rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala_GusiBerdarah"/>
+        <mengalamiKondisi rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Kondisi_BauMulut"/>
+        <mengalamiKondisi rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Kondisi_GigiGoyang"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pasien_Trauma_Oklusi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pasien_Trauma_Oklusi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pasien"/>
+        <didugaMenderita rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Trauma_Oklusi"/>
+        <mengalamiGejala rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala_NyeriSaatGigit"/>
+        <mengalamiKondisi rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Kondisi_GigiGoyang"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Abses_Periapikal_Akut -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Abses_Periapikal_Akut">
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/AbsesPeriapikalAkut"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitGigi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Abses_Periapikal_Kronis -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Abses_Periapikal_Kronis">
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitGigi"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PeriapikalKronis"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Abses_Periodontal -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Abses_Periodontal">
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/AbsesPeriodontal"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Gingivitis -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Gingivitis">
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gingivitis"/>
+        <rdfs:comment xml:lang="id">Gingivitis adalah peradangan pada jaringan gusi (gingiva) yang terjadi tanpa merusak atau menghilangkan jaringan ikat yang menempelkan gusi ke gigi</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MESH/D005891"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Impaksi_Molar -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Impaksi_Molar">
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/ImpaksiMolar"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitGigi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Infeksi_Pasca_Cabut -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Infeksi_Pasca_Cabut">
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/InfeksiPascaCabut"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Nekrosis_Pulpa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Nekrosis_Pulpa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/NekrosisPulpa"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Periodontitis -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Periodontitis">
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitGigi"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Periodontitis"/>
+        <membutuhkanSpesialis rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Spesialis_Peridonsia"/>
+        <rdfs:comment xml:lang="id">Periodontitis adalah peradangan pada jaringan penyangga gigi (periodonsium) yang disertai dengan kerusakan atau hilangnya jaringan ikat yang menahan gigi di tempatnya</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MESH/D010518"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Pulpitis_Irreversible -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Pulpitis_Irreversible">
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitGigi"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PulpitisIrreversible"/>
+        <rdf:type>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KondisiGigi"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitGigi"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdf:type>
+        <membutuhkanSpesialis rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Spesialis_Konservasi_Gigi"/>
+        <rdfs:comment xml:lang="id">Pulpitis adalah peradangan pada “pulp” gigi (bagian tengah gigi yang berisi saraf dan pembuluh darah). Peradangan ini biasanya terjadi karena bakteri masuk ke dalam gigi melalui gigi berlubang (karies), retak, atau terbuka sehingga pulp terpapar</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MESH/D011671"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Pulpitis_Reversible -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Pulpitis_Reversible">
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PulpitisReversible"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Radiks_Relikta -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Radiks_Relikta">
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/RadiksRelikta"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Trauma_Oklusi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Trauma_Oklusi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitGigi"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/TraumaOklusi"/>
+        <rdf:type>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Gejala"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KondisiGigi"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitGigi"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdf:type>
+        <rdfs:comment xml:lang="id">Trauma oklusi adalah gangguan atau kerusakan pada jaringan penyangga gigi yang terjadi karena hubungan atau kontak gigi atas (maksila) dan gigi bawah (mandibula) tidak normal saat fungsi mengunyah berlangsung</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MESH/D003766"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Spesialis_Bedah_Mulut -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Spesialis_Bedah_Mulut">
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/SpesialisBedahMulut"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Spesialis_Konservasi_Gigi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Spesialis_Konservasi_Gigi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/SpesialisEndodentis"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/SpesialisGigi"/>
+        <menanganiPenyakit rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Pulpitis_Irreversible"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Spesialis_Peridonsia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Spesialis_Peridonsia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/SpesialisPeriodonsia"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Spesialis_Periodonsia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Spesialis_Periodonsia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/SpesialisPeriodonsia"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Spesialis_Umum -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Spesialis_Umum">
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/DokterGigiUmum"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/SpesialisGigi"/>
+        <menanganiPenyakit rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Trauma_Oklusi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Stimulus_Dingin -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Stimulus_Dingin"/>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Stimulus_Panas -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Stimulus_Panas"/>
+    
+
+
+    <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Tekanan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Tekanan">
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pemicu"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/TekananSaatMenggigit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/g1">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/g2">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/g3">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/k">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/g">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/k1">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/k2">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/trig">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/detik">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/penyakit">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/spesialis">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>p3_periapikal_kronis_rule1</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pasien"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/mengalamiKondisi"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/k"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/FistulaGusi"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/k"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/mengalamiGejala"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/g"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/ResponGigiNegatif"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/g"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/didugaMenderita"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Abses_Periapikal_Kronis"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>p2_impaksi_molar_rule2</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pasien"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/mengalamiGejala"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/g"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Trismus"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/g"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/mengalamiKondisi"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/k1"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/GigiErupsiSebagian"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/k1"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/mengalamiKondisi"/>
+                                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/k2"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                <rdf:first>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PosisiMiring"/>
+                                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/k2"/>
+                                                                    </rdf:Description>
+                                                                </rdf:first>
+                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/didugaMenderita"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Impaksi_Molar"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>p2_impaksi_molar_rule1</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pasien"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/mengalamiKondisi"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/k1"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/OperkulumBengkak"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/k1"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/mengalamiKondisi"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/k2"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/GigiErupsiSebagian"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/k2"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/didugaMenderita"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Impaksi_Molar"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>p4_periodontitis</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pasien"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/mengalamiGejala"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/g"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/GusiBerdarah"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/g"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/mengalamiKondisi"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/k"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/GigiGoyang"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/k"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/didugaMenderita"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Periodontitis"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>p4_abses_periodontal</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pasien"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/mengalamiKondisi"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/k"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/GusiBenjol"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/k"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/mengalamiGejala"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/g"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/ResponGigiPositifKuat"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/g"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/didugaMenderita"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Abses_Periodontal"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>p2_radiks_relikta</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pasien"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/mengalamiKondisi"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/k1"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/SisaAkar"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/k1"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/mengalamiKondisi"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/k2"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/GusiBenjol"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/k2"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/didugaMenderita"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Radiks_Relikta"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>p4_gingivitis</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pasien"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/mengalamiGejala"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/g"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/GusiBerdarah"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/g"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/mengalamiKondisi"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/k"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KarangGigi"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/k"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/didugaMenderita"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Gingivitis"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>p2_infeksi_pasca_cabut</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pasien"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/mengalamiKondisi"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/k1"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/RiwayatCabutGigi"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/k1"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/mengalamiKondisi"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/k2"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/LubangPascaCabut"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/k2"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/mengalamiGejala"/>
+                                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/g"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                <rdf:first>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/NyeriHebat"/>
+                                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/g"/>
+                                                                    </rdf:Description>
+                                                                </rdf:first>
+                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/didugaMenderita"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Infeksi_Pasca_Cabut"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>p3_pulpitis_irreversible_rule1</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pasien"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/mengalamiGejala"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/g"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Ngilu"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/g"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/dipicuOleh"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/g"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/trig"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/StimulusDingin"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/trig"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/durasiNyeri"/>
+                                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/g"/>
+                                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/detik"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                <rdf:first>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                                                                        <swrl:arguments>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                <rdf:first rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/detik"/>
+                                                                                <rdf:rest>
+                                                                                    <rdf:Description>
+                                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</rdf:first>
+                                                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                                    </rdf:Description>
+                                                                                </rdf:rest>
+                                                                            </rdf:Description>
+                                                                        </swrl:arguments>
+                                                                    </rdf:Description>
+                                                                </rdf:first>
+                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/didugaMenderita"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Pulpitis_Irreversible"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>p1_pulpitis_reversible_rule</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pasien"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/mengalamiGejala"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/g"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Ngilu"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/g"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/dipicuOleh"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/g"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/trig"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/StimulusDingin"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/trig"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/durasiNyeri"/>
+                                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/g"/>
+                                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/detik"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                <rdf:first>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThanOrEqual"/>
+                                                                        <swrl:arguments>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                <rdf:first rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/detik"/>
+                                                                                <rdf:rest>
+                                                                                    <rdf:Description>
+                                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</rdf:first>
+                                                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                                    </rdf:Description>
+                                                                                </rdf:rest>
+                                                                            </rdf:Description>
+                                                                        </swrl:arguments>
+                                                                    </rdf:Description>
+                                                                </rdf:first>
+                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/didugaMenderita"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Pulpitis_Reversible"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>p3_pulpitis_irreversible_rule3</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pasien"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/mengalamiGejala"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/g"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/NyeriMalamHari"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/g"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/didugaMenderita"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Pulpitis_Irreversible"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>p2_impaksi_molar_rule3</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pasien"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/mengalamiGejala"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/g"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/NyeriRahangBelakang"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/g"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/mengalamiKondisi"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/k"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PosisiMiring"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/k"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/didugaMenderita"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Impaksi_Molar"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>p_trauma_okulsi</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pasien"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/mengalamiGejala"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/g"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/NyeriSaatMenggigit"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/g"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/dipicuOleh"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/g"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/trig"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/TekananSaatMenggigit"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/trig"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/didugaMenderita"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Trauma_Oklusi"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>p3_pulpitis_irreversible_rule2</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pasien"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/mengalamiGejala"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/g"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/NyeriSpontan"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/g"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/didugaMenderita"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Pulpitis_Irreversible"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>rekomendasi_spesialis_rule</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pasien"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/didugaMenderita"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/penyakit"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/membutuhkanSpesialis"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/penyakit"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/spesialis"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/dirujukKe"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/spesialis"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>p3_abses_periapikal_akut_rule1</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pasien"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/mengalamiGejala"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/g1"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/ResponGigiNegatif"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/g1"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/mengalamiGejala"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/g2"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/NyeriPerkusi"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/g2"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/mengalamiGejala"/>
+                                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/g3"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                <rdf:first>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/BengkakWajah"/>
+                                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/g3"/>
+                                                                    </rdf:Description>
+                                                                </rdf:first>
+                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/didugaMenderita"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Abses_Periapikal_Akut"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>p3_nekrosis_pulpa</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Pasien"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/mengalamiKondisi"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/k"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Discoloration"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/k"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/mengalamiGejala"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/g"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/ResponGigiNegatif"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/g"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/didugaMenderita"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/p"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Nekrosis_Pulpa"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

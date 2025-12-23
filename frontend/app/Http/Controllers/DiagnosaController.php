@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
-class DiagnosaController extends Controller
+class DiagnosaController
 {
  public function index()
     {

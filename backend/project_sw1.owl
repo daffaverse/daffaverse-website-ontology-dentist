@@ -1225,6 +1225,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Pulpitis_Reversible">
         <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PulpitisReversible"/>
+        <rdfs:comment xml:lang="id">Pulpitis adalah peradangan pada “pulp” gigi (bagian tengah gigi yang berisi saraf dan pembuluh darah). Peradangan ini biasanya terjadi karena bakteri masuk ke dalam gigi melalui gigi berlubang (karies), retak, atau terbuka sehingga pulp terpapar</rdfs:comment>
     </owl:NamedIndividual>
     
 

@@ -864,7 +864,7 @@
     <!-- http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PosisiMiring -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PosisiMiring">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/KondisiGigi"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PosisiGigi"/>
     </owl:Class>
     
 
@@ -1218,6 +1218,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Abses_Periapikal_Akut">
         <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/AbsesPeriapikalAkut"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitGigi"/>
+        <rdfs:comment xml:lang="id">Abses periapikal akut adalah infeksi mendadak di ujung akar gigi yang menyebabkan nyeri hebat dan bengkak</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -1227,6 +1228,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Abses_Periapikal_Kronis">
         <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitGigi"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PeriapikalKronis"/>
+        <rdfs:comment xml:lang="id">Abses periapikal kronis adalah infeksi lama di ujung akar gigi yang sering tidak terasa sakit, tapi bisa menimbulkan saluran nanah di gusi</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -1235,6 +1237,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Abses_Periodontal">
         <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/AbsesPeriodontal"/>
+        <rdfs:comment xml:lang="id">Abses periodontal adalah infeksi pada jaringan penyangga gigi yang membentuk kantong berisi nanah di gusi</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -1253,6 +1256,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Hipersensitivitas_Dentin">
         <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/HipersensitivitasDentin"/>
+        <rdfs:comment xml:lang="id">Hipersensitif dentin adalah rasa ngilu berlebihan pada gigi karena lapisan dentin terbuka dan terpapar rangsangan seperti dingin atau panas</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -1262,6 +1266,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Impaksi_Molar">
         <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/ImpaksiMolar"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitGigi"/>
+        <rdfs:comment xml:lang="id">Impaksi molar adalah kondisi ketika gigi geraham bungsu (molar ketiga atau gigi bungsu) tidak punya cukup ruang untuk tumbuh keluar secara normal, sehingga terjebak di dalam gusi atau tulang rahang</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -1270,6 +1275,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Infeksi_Pasca_Cabut">
         <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/InfeksiPascaCabut"/>
+        <rdfs:comment xml:lang="id">Infeksi pasca cabut adalah peradangan atau infeksi yang muncul di area bekas pencabutan gigi</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -1278,6 +1284,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Penyakit_Nekrosis_Pulpa">
         <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/NekrosisPulpa"/>
+        <rdfs:comment xml:lang="id">Nekrosis pulpa adalah kondisi ketika saraf dan pembuluh darah di dalam gigi mati, biasanya akibat infeksi atau kerusakan parah</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -1288,6 +1295,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/PenyakitGigi"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Periodontitis"/>
         <membutuhkanSpesialis rdf:resource="http://www.semanticweb.org/iban/ontologies/2025/10/spesialis-gigi-recommender/Spesialis_Peridonsia"/>
+        <rdfs:comment xml:lang="id">Periodontitis adalah infeksi gusi yang parah yang merusak jaringan lunak dan tulang penyangga gigi, biasanya berkembang dari radang gusi (gingivitis) yang tidak ditangani</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -1345,6 +1353,7 @@
                 </owl:unionOf>
             </owl:Class>
         </rdf:type>
+        <rdfs:comment xml:lang="id">Trauma oklusi adalah kerusakan gigi atau jaringan penyangga akibat tekanan gigitan yang tidak seimbang</rdfs:comment>
     </owl:NamedIndividual>
     
 

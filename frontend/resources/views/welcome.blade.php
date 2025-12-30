@@ -208,15 +208,19 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     @if(isset($masterData['pemicu']) && count($masterData['pemicu']) > 0)
                         @foreach($masterData['pemicu'] as $pemicuItem)
-                        <label class="relative flex items-center p-4 rounded-xl cursor-pointer border border-gray-100 hover:border-medical-200 hover:bg-gray-50 transition-all duration-200 {{ old('pemicu') == $pemicuItem['value'] ? 'bg-medical-50 border-medical-200' : '' }}">
-                            <input type="radio" name="pemicu" value="{{ $pemicuItem['value'] }}" 
-                                {{ old('pemicu') == $pemicuItem['value'] ? 'checked' : '' }} 
-                                class="w-4 h-4 text-medical-600 border-gray-300 focus:ring-medical-500">
+                        <label class="relative flex items-center p-4 rounded-xl cursor-pointer border border-gray-100 hover:border-medical-200 hover:bg-gray-50 transition-all duration-200 
+                            {{ is_array(old('pemicu')) && in_array($pemicuItem['value'], old('pemicu')) ? 'bg-medical-50 border-medical-200' : '' }}">
+                            
+                            <input type="checkbox" 
+                                name="pemicu[]" 
+                                value="{{ $pemicuItem['value'] }}" 
+                                {{ is_array(old('pemicu')) && in_array($pemicuItem['value'], old('pemicu')) ? 'checked' : '' }} 
+                                class="w-4 h-4 text-medical-600 border-gray-300 rounded focus:ring-medical-500">
+                            
                             <span class="ml-3 text-sm font-medium text-gray-900">{{ $pemicuItem['label'] }}</span>
                         </label>
                         @endforeach
                     @else
-                        <!-- Fallback jika data pemicu belum ada di ontology -->
                         <p class="text-sm text-gray-400 col-span-2">Belum ada data pemicu yang dimuat dari Ontology.</p>
                     @endif
                 </div>

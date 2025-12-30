@@ -39,6 +39,10 @@ class DiagnosaController
         $kondisiSelected = $request->input('kondisi', []); // Array
         $durasi = $request->input('durasi');
         $pemicu = $request->input('pemicu');
+        $lamaKeluhan = (int) $request->input('lama_keluhan');
+
+        // dd($nama, $gejalaSelected, $kondisiSelected, $durasi, $pemicu, $lamaHari);
+        // dd($request->all());
 
         // 2. Susun Struktur 'details' untuk API Python
         // PERBAIKAN: Ambil dulu input 'details' dari form (isi lama_hari ada disini)
@@ -67,7 +71,8 @@ class DiagnosaController
                 'nama' => $nama,
                 'gejala' => $gejalaSelected,
                 'kondisi' => $kondisiSelected,
-                'details' => $details
+                'details' => $details,
+                'lama_keluhan' => $lamaKeluhan,
             ]);
 
             if ($response->successful()) {

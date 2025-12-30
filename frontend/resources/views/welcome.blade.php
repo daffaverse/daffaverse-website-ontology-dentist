@@ -159,8 +159,8 @@
                      <div class="p-4 bg-yellow-50 rounded-xl border border-yellow-100">
                         <label class="block text-sm font-semibold text-yellow-900 mb-2">Lama Keluhan (Hari)</label>
                         <p class="text-xs text-yellow-600 mb-2">Sudah berapa hari Anda merasakan gangguan ini?</p>
-                        <input type="number" name="details[lama_hari]" 
-                            value="{{ old('details.lama_hari') }}"
+                        <input type="number" name="lama_keluhan" 
+                            value="{{ old('lama_keluhan') }}"
                             placeholder="Contoh: 3" 
                             class="w-full px-3 py-2 rounded-lg border border-yellow-200 focus:ring-2 focus:ring-yellow-500 outline-none placeholder-gray-400">
                         <p class="text-xs text-gray-500 mt-2 italic">*kosongkan jika tidak tahu.</p>

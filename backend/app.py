@@ -75,13 +75,13 @@ def run_diagnosis(nama_pasien, gejala_list, kondisi_list, details=None):
         pasien = base.Pasien(pasien_iri)
         
         # --- INPUT DATA PROPERTY (Lama Hari) ---
-        if details and 'lama_hari' in details:
-            raw_hari = details['lama_hari']
+        if details and 'lama_keluhan' in details:
+            raw_hari = details['lama_keluhan']
             if raw_hari is not None and str(raw_hari).strip() != "":
                 try:
                     hari_val = int(raw_hari)
-                    if hasattr(pasien, 'lamaHari'): 
-                        pasien.lamaHari = [hari_val]
+                    if hasattr(pasien, 'lamaKeluhan'): 
+                        pasien.lamaKeluhan = [hari_val]
                 except ValueError:
                     pass 
 
@@ -199,12 +199,27 @@ def get_master_data():
 @app.route('/api/diagnosa', methods=['POST'])
 def api_diagnosa():
     data = request.json
-    output = run_diagnosis(
-        data.get('nama', 'Anonim'), 
-        data.get('gejala', []), 
-        data.get('kondisi', []), 
-        data.get('details', {})
-    )
+    
+    # AMBIL DATA
+    nama = data.get('nama', 'Anonim')
+    gejala = data.get('gejala', [])
+    kondisi = data.get('kondisi', [])
+    
+    # 1. Ambil 'details' (untuk durasi/pemicu per gejala)
+    details = data.get('details', {})
+    
+    # 2. PERBAIKAN: Masukkan 'lama_keluhan' dari root JSON ke dalam dictionary 'details'
+    # Pastikan Frontend mengirim JSON dengan key "lama_keluhan" juga, atau sesuaikan di sini.
+    
+    # OPSI A: Jika Frontend mengirim key "lama_keluhan"
+    if 'lama_keluhan' in data:
+        details['lama_keluhan'] = data['lama_keluhan']
+
+    # OPSI B (JAGA-JAGA): Jika Frontend masih mengirim "lama_hari" tapi logic Anda butuh "lama_keluhan"
+    elif 'lama_hari' in data: 
+        details['lama_keluhan'] = data['lama_hari']
+
+    output = run_diagnosis(nama, gejala, kondisi, details)
     return jsonify({"status": "success", "data": output})
 
 if __name__ == '__main__':
